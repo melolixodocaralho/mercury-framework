@@ -1,3 +1,4 @@
-__version__ = "0.1.0"
-
-from .cli import main  # convenience import
+"""
+Mercury Framework
+Educational and safe security research framework.
+"""

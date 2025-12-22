@@ -8,10 +8,8 @@ setup(
     author="Voltsparx",
     author_email="voltsparx@gmail.com",
     python_requires=">=3.8",
-    packages=find_packages(include=["mercury*", "mercury_plugins*"]),
-    install_requires=[
-        # Add dependencies if needed
-    ],
+    packages=find_packages(),
     include_package_data=True,
+    install_requires=[],
     zip_safe=False,
 )
