@@ -2,7 +2,6 @@ from mercury.plugin_loader import discover_plugins, load_manifest
 
 def test_discover_example_plugin():
     plugins = discover_plugins()
-    # example_simulator should be discoverable
     names = [p['name'] for p in plugins]
     assert 'example_simulator' in names
 

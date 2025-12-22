@@ -1,39 +1,26 @@
-# -*- coding: utf-8 -*-
-"""
-Example Simulator Plugin for Mercury
-This plugin is safe and does not perform harmful operations.
-Supports --setup, --run, and --cleanup commands.
-"""
-
-import sys
+import argparse
 
 def setup():
-    print("Setup completed for example_simulator.")
-    return 0
+    print("Setup complete for example_simulator")
 
 def run():
-    print("Running safe example plugin...")
-    return 0
+    print("Running safe example plugin")
 
 def cleanup():
-    print("Cleanup completed for example_simulator.")
-    return 0
-
-def main():
-    if len(sys.argv) < 2:
-        print("No command specified. Use --setup, --run, or --cleanup.")
-        sys.exit(1)
-
-    cmd = sys.argv[1].lower()
-    if cmd == "--setup":
-        sys.exit(setup())
-    elif cmd == "--run":
-        sys.exit(run())
-    elif cmd == "--cleanup":
-        sys.exit(cleanup())
-    else:
-        print(f"Unknown command: {cmd}")
-        sys.exit(1)
+    print("Cleanup done for example_simulator")
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--setup", action="store_true")
+    parser.add_argument("--run", action="store_true")
+    parser.add_argument("--cleanup", action="store_true")
+    args = parser.parse_args()
+
+    if args.setup:
+        setup()
+    elif args.run:
+        run()
+    elif args.cleanup:
+        cleanup()
+    else:
+        print("No action specified")

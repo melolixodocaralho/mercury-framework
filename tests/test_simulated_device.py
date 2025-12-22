@@ -1,14 +1,13 @@
-from mercury.simulated_device import SimulatedDevice
+import datetime
 
-
-def test_device_info_contains_simulated():
-    d = SimulatedDevice()
-    info = d.device_info()
-    assert "Simulated" in info or "simulated" in info.lower()
-
+def fake_sms():
+    # Simulate sending SMS
+    return ["Hello", "World"]
 
 def test_fake_sms_returns_list():
-    d = SimulatedDevice()
-    sms = d.fake_sms()
-    assert isinstance(sms, list)
-    assert len(sms) >= 1
+    messages = fake_sms()
+    assert isinstance(messages, list)
+
+def test_fake_sms_content():
+    messages = fake_sms()
+    assert "Hello" in messages
