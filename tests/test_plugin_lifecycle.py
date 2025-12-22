@@ -19,13 +19,11 @@ def run_cmd(path, args):
 
 def test_example_plugin_lifecycle():
     plugins = discover_plugins()
-
     p = next((p for p in plugins if p["name"] == "example_simulator"), None)
     assert p is not None
 
     # ✅ CROSS-PLATFORM path handling
     plugin_py = os.path.join(p["path"], "plugin.py")
-
     assert os.path.exists(plugin_py), f"plugin.py not found at {plugin_py}"
 
     # ---- setup ----
