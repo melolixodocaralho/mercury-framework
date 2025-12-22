@@ -1,0 +1,11 @@
+# Educational descriptor only — NO code
+name: educational_reverse_shell
+description: Metadata-only description of a reverse-shell payload for training and detection exercises. This file contains NO executable code and MUST NOT be used to build an exploit.
+platforms:
+  - windows
+  - linux
+  - android
+usage: |
+  This descriptor is for documentation, detection tuning, and lab exercises only.
+  Do NOT implement or deploy reverse shells in operational environments.
+responsible_use: "Only for academic study and detection engineering in isolated labs."

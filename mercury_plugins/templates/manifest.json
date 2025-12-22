@@ -1,0 +1,8 @@
+{
+  "name": "Plugin Templates",
+  "version": "0.0.0",
+  "description": "Directory containing plugin templates. Not a runnable plugin.",
+  "author": "voltsparx",
+  "network_policy": "local-only",
+  "responsible_use": "Templates are for creating new plugins. Not intended to be executed directly."
+}

@@ -1,0 +1,33 @@
+# Educational descriptor: reverse shell (metadata only)
+# This file is an educational description of what a reverse shell is, detection
+# indicators, and recommended mitigations. It contains NO code and is intended
+# for defenders and researchers.
+
+name: reverse_shell
+category: remote_access
+description: |
+  A reverse shell is a connection where a target machine initiates an outbound
+  connection to a controller and provides a shell over that connection. This
+  descriptor is educational only and contains no implementation code.
+
+indicators:
+  - outbound_connection_to_unusual_host
+  - use_of_nc_with_-e_or_-c
+  - spawning_of_/bin/sh_or_/bin/bash_by_untypical_process
+  - suspicious_command_line_arguments
+
+detection_points:
+  - monitor_outbound_connections_and_associate_processes
+  - inspect_command_line_invocations_for_shell_invocations
+  - network_signatures_for_known_tools (e.g., netcat, socat)
+
+mitigations:
+  - restrict_outbound_traffic_by_policy
+  - use_egress_firewalls_and_proxy_authentication
+  - apply_endpoint_monitoring_and_process_whitelisting
+  - educate_admins_on_incident_response
+
+responsible_use: |
+  This descriptor is for educational and defensive use only. Do not implement
+  or deploy reverse shells against systems you do not own or have explicit
+  permission to test. Use this descriptor to build detection and prevention rules.
