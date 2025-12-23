@@ -1,33 +1,71 @@
-$ErrorActionPreference = "Stop"
+# build-lite-release.ps1
+<#
+.SYNOPSIS
+Builds a lightweight release ZIP of Mercury Framework containing only essential files.
 
-$versionLine = Select-String 'version\s*=' pyproject.toml
-$VERSION = $versionLine.ToString().Split('"')[1]
+.DESCRIPTION
+Includes:
+- Core Mercury framework (mercury/)
+- Essential plugins (mercury_plugins/)
+- Samples (samples/)
+- Documentation (docs/, README.md, LICENSE, RESPONSIBLE_USE.md)
+- Tools necessary for running
 
-$OUT = "lite_dist"
-$ZIP = "mercury-framework-lite-$VERSION.zip"
+Excludes:
+- CI workflows
+- Tests
+- Large optional binaries
 
-Remove-Item $OUT -Recurse -Force -ErrorAction SilentlyContinue
-Remove-Item $ZIP -Force -ErrorAction SilentlyContinue
+.EXAMPLE
+pwsh ./build-lite-release.ps1
+#>
 
-New-Item -ItemType Directory $OUT | Out-Null
+param (
+    [string]$OutputDir = "release",
+    [string]$ZipName = "mercury-framework-lite.zip"
+)
 
-$include = @(
+# Resolve paths
+$RootDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
+$OutputPath = Join-Path -Path $RootDir -ChildPath $OutputDir
+$ZipPath = Join-Path -Path $OutputPath -ChildPath $ZipName
+
+# Ensure output directory exists
+if (-Not (Test-Path $OutputPath)) {
+    New-Item -ItemType Directory -Path $OutputPath | Out-Null
+}
+
+# Files & directories to include
+$IncludeItems = @(
     "mercury",
     "mercury_plugins",
     "samples",
-    "run.py",
-    "cli.py",
-    "requirements.txt",
+    "docs",
     "README.md",
     "LICENSE",
-    "RESPONSIBLE_USE.md",
-    "PLUGIN_AUTHOR_GUIDE.md"
+    "RESPONSIBLE_USE.md"
 )
 
-foreach ($item in $include) {
-    Copy-Item $item $OUT -Recurse -Force
+# Clean up old ZIP if exists
+if (Test-Path $ZipPath) {
+    Remove-Item $ZipPath -Force
 }
 
-Compress-Archive -Path "$OUT\*" -DestinationPath $ZIP -Force
+# Create ZIP (cross-platform)
+Write-Host "Building lightweight ZIP..."
+if ($IsWindows) {
+    # Windows: Use Compress-Archive
+    Compress-Archive -Path $IncludeItems -DestinationPath $ZipPath -Force
+} else {
+    # Linux / macOS: Use zip command if available
+    if (Get-Command zip -ErrorAction SilentlyContinue) {
+        Push-Location $RootDir
+        zip -r $ZipPath $IncludeItems -x "*.git*" "*tests*" "*sandbox*" "*ci.yml*" -q
+        Pop-Location
+    } else {
+        Write-Error "zip command not found on this system. Please install zip utility."
+        exit 1
+    }
+}
 
-Write-Host "ZIP created: $ZIP"
+Write-Host "Lite ZIP created at: $ZipPath"
